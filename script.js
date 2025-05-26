@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initial Data (Simulated Database using Local Storage) ---
     function getProducts() {
         return JSON.parse(localStorage.getItem('products')) || [
-            { id: 'p1', name: 'Mango Pickle', price: 150, image: 'images/pickle1.jpg', description: 'Tangy and spicy homemade mango pickle.', category: 'pickles', subcategory: 'veg' },
-            { id: 'p2', name: 'Lemon Pickle', price: 120, image: 'images/pickle2.jpg', description: 'Zesty lemon pickle, a perfect accompaniment.', category: 'pickles', subcategory: 'veg' },
-            { id: 'p3', name: 'Murukku', price: 80, image: 'images/snack1.jpg', description: 'Crispy and savory traditional South Indian snack.', category: 'snacks', subcategory: 'veg' },
-            { id: 'p4', name: 'Cashew Nuts', price: 500, image: 'images/dryfruit1.jpg', description: 'Premium quality roasted cashew nuts.', category: 'dry-fruits', subcategory: 'veg' },
-            { id: 'p5', name: 'Almonds', price: 450, image: 'images/dryfruit2.jpg', description: 'Healthy and delicious California almonds.', category: 'dry-fruits', subcategory: 'veg' },
-            { id: 'p6', name: 'Paneer', price: 200, image: 'images/milk1.jpg', description: 'Fresh and soft cottage cheese.', category: 'milk-products', subcategory: 'veg' },
-            { id: 'p7', name: 'Gulab Jamun', price: 250, image: 'images/sweet1.jpg', description: 'Soft, melt-in-your-mouth milk-solids-based sweets.', category: 'sweets', subcategory: 'veg' },
-            { id: 'p8', name: 'Chikki', price: 100, image: 'images/sweet2.jpg', description: 'Peanut and jaggery brittle.', category: 'sweets', subcategory: 'veg' }
+            { id: 'p1', name: 'Mango Pickle', price: 150, image: 'pickle1.jpg', description: 'Tangy and spicy homemade mango pickle.', category: 'pickles', subcategory: 'veg' },
+            { id: 'p2', name: 'Lemon Pickle', price: 120, image: 'pickle2.jpg', description: 'Zesty lemon pickle, a perfect accompaniment.', category: 'pickles', subcategory: 'veg' },
+            { id: 'p3', name: 'Murukku', price: 80, image: 'snack1.jpg', description: 'Crispy and savory traditional South Indian snack.', category: 'snacks', subcategory: 'veg' },
+            { id: 'p4', name: 'Cashew Nuts', price: 500, image: 'dryfruit1.jpg', description: 'Premium quality roasted cashew nuts.', category: 'dry-fruits', subcategory: 'veg' },
+            { id: 'p5', name: 'Almonds', price: 450, image: 'dryfruit2.jpg', description: 'Healthy and delicious California almonds.', category: 'dry-fruits', subcategory: 'veg' },
+            { id: 'p6', name: 'Paneer', price: 200, image: 'milk1.jpg', description: 'Fresh and soft cottage cheese.', category: 'milk-products', subcategory: 'veg' },
+            { id: 'p7', name: 'Gulab Jamun', price: 250, image: 'sweet1.jpg', description: 'Soft, melt-in-your-mouth milk-solids-based sweets.', category: 'sweets', subcategory: 'veg' },
+            { id: 'p8', name: 'Chikki', price: 100, image: 'sweet2.jpg', description: 'Peanut and jaggery brittle.', category: 'sweets', subcategory: 'veg' }
         ];
     }
 
