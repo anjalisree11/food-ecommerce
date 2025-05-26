@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Food E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fullscreen-image-container">
+        <img src="https://img.freepik.com/free-photo/top-view-circular-food-frame_23-2148723455.jpg?semt=ais_hybrid&w=740" alt="Delicious Food" id="fullscreen-image">
+        <div id="overlay-content">
+            <h1>Welcome to Our Food Store</h1>
+            <button id="enter-site-button">Enter Site</button>
+        </div>
+    </div>
+
+    <header id="main-header" class="hidden">
+        <nav>
+            <div class="logo">Foodie Delights</div>
+            <ul class="nav-links">
+                <li><a href="#" id="home-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="#" data-category="pickles">Pickles</a>
+                        <a href="#" data-category="snacks">Snacks</a>
+                        <a href="#" data-category="dry-fruits">Dry Fruits</a>
+                        <a href="#" data-category="milk-products">Milk Products</a>
+                        <a href="#" data-category="sweets">Sweets</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="auth-options">
+                <a href="#" id="admin-link" class="hidden">Admin Panel</a>
+                <a href="#" id="user-dashboard-link" class="hidden">My Account</a>
+                <a href="#" id="login-link">Login</a>
+                <a href="#" id="register-link">Register</a>
+                <a href="#" id="logout-link" class="hidden">Logout</a>
+            </div>
+            <div class="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="hidden">
+        <section id="home-section" class="active-section">
+            <h2>All Products</h2>
+            <div id="product-list" class="product-grid">
+                </div>
+        </section>
+
+        <section id="category-section" class="hidden">
+            <h2 id="category-title"></h2>
+            <div id="subcategory-filters">
+                </div>
+            <div id="category-product-list" class="product-grid">
+                </div>
+        </section>
+
+        <section id="product-detail-section" class="hidden">
+            <button id="back-to-products">Back to Products</button>
+            <div id="product-detail-content">
+                </div>
+        </section>
+
+        <section id="login-section" class="hidden auth-form-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="show-register-from-login">Register</a></p>
+            </form>
+        </section>
+
+        <section id="register-section" class="hidden auth-form-container">
+            <h2>Register</h2>
+            <form id="register-form">
+                <label for="register-name">Name:</label>
+                <input type="text" id="register-name" required>
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required>
+                <label for="register-confirm-password">Confirm Password:</label>
+                <input type="password" id="register-confirm-password" required>
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="#" id="show-login-from-register">Login</a></p>
+            </form>
+        </section>
+
+        <section id="admin-panel-section" class="hidden">
+            <h2>Admin Panel</h2>
+            <button id="add-product-btn">Add New Product</button>
+            <div id="admin-product-list">
+                <h3>Manage Products</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Subcategory</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-product-table-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="add-edit-product-form-container" class="hidden">
+                <h3>Add/Edit Product</h3>
+                <form id="add-edit-product-form">
+                    <input type="hidden" id="product-id">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" required>
+                    <label for="product-price">Price (₹):</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                    <label for="product-image">Image URL:</label>
+                    <input type="url" id="product-image" required>
+                    <label for="product-description">Description:</label>
+                    <textarea id="product-description"></textarea>
+                    <label for="product-category">Category:</label>
+                    <select id="product-category" required>
+                        <option value="">Select Category</option>
+                        <option value="pickles">Pickles</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="dry-fruits">Dry Fruits</option>
+                        <option value="milk-products">Milk Products</option>
+                        <option value="sweets">Sweets</option>
+                    </select>
+                    <label for="product-subcategory">Subcategory (optional, eg: Veg/Non-Veg):</label>
+                    <input type="text" id="product-subcategory">
+                    <button type="submit" id="save-product-btn">Save Product</button>
+                    <button type="button" id="cancel-product-edit">Cancel</button>
+                </form>
+            </div>
+
+            <div id="admin-orders-list">
+                <h3>Customer Orders</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>
+                            <th>Customer Email</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-orders-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="user-dashboard-section" class="hidden">
+            <h2>My Account</h2>
+            <h3>My Orders</h3>
+            <div id="user-orders-list">
+                </div>
+        </section>
+
+        <section id="order-placement-section" class="hidden auth-form-container">
+            <h2>Place Your Order</h2>
+            <form id="order-form">
+                <input type="hidden" id="order-product-id">
+                <p>Product: <span id="order-product-name-display"></span></p>
+                <p>Price per item: ₹<span id="order-product-price-display"></span></p>
+                <label for="order-name">Your Name:</label>
+                <input type="text" id="order-name" required>
+                <label for="order-email">Your Email:</label>
+                <input type="email" id="order-email" required>
+                <label for="order-quantity">Quantity:</label>
+                <input type="number" id="order-quantity" min="1" value="1" required>
+                <p>Total: ₹<span id="order-total-price">0.00</span></p>
+                <button type="submit">Place Order</button>
+                <button type="button" id="cancel-order">Cancel</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
